@@ -83,8 +83,8 @@ void Merge(int array[], int p, int q, int r) {
 	}
 
 	int i = 0, j = 0;
-	L[sizeOfLeftArray] = 1000001;
-	R[sizeOfRightArray] = 1000001;
+	L[sizeOfLeftArray] = 10000031;
+	R[sizeOfRightArray] = 10033001;
 
 	//Storing back in the original array 
 	for (int k = p; k <= r; k++) {
