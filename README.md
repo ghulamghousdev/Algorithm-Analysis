@@ -24,3 +24,13 @@
         MaxSubArrayRecord HybridMaxSubArray(int A[], int start, int end);
         MaxSubArrayRecord findMaxArrayBruteForce(int A[], int start, int end);
         MaxSubArrayRecord CrossSum(int A[], int start, int mid, int end);
+        
+        
+# Two Algorithms for Cutting Rod Problem
+
+- ## Cutting Rod Dynamic Algorithm using Memorization Approach
+        int cutRodAI(int priceArray[], int lengthOfRod);
+        int cutRodAUX(int priceArray[], int tempArray[], int lengthOfRod);
+- ## Cutting Rod Recursive Algorithm 
+        int cutRodMax(int array[], int lengthOfTheRod);    
+  
