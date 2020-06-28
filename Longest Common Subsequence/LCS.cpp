@@ -7,6 +7,7 @@ struct arrayInitilizer {
 
 	int** traceArray;
 	int** valueArray;
+	int lengthOfLCS = 0;
 
 
 	//initilizing 2D arrays using parameterized constructor
@@ -35,11 +36,24 @@ int main() {
 	int lengthOfString1 = string1.length(); 
 	int lengthOfString2 = string2.length();
 
-	arrayInitilizer obj(lengthOfString1, lengthOfString2); //declaring object to store returned data from LCS_Length function
+	//declaring object to store returned data from LCS_Length function
+	arrayInitilizer obj(lengthOfString1, lengthOfString2); 
 	obj = LCS_Length(string1, string2);
 	
+	//Printing Results
 	cout << "The Longest common Subsequence is: ";
 	PrintLCS(obj.traceArray, lengthOfString2, lengthOfString1, string2); //Printing the LCS
+	cout << " with length of: " << obj.lengthOfLCS << endl;
+	
+	//Deallocating the memory
+	for (int i = 0; i <= lengthOfString2; i++){
+        delete[] obj.traceArray[i];
+        delete[] obj.valueArray[i];
+    }
+    delete[] obj.traceArray;
+    delete[] obj.valueArray;
+    
+    
 	return 0;
 }
 
@@ -81,6 +95,7 @@ arrayInitilizer LCS_Length(string string1, string string2) {
 		}
 
 	}
+	obj.lengthOfLCS = obj.valueArray[i - 1][j - 1];
 	
 	return obj;
 }
